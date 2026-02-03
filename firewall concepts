@@ -1,0 +1,9 @@
+Default Deny: Block everything unless explicitly allowed
+
+NAT (Network Address Translation): Hides internal IPs
+
+DMZ: Isolated zone for public-facing servers
+
+Logging & Monitoring: Track traffic and detect attacks
+
+Ingress vs Egress filtering: Incoming vs outgoing traffic
