@@ -1,0 +1,114 @@
+Source IP address
+Who is sending the traffic
+
+Destination IP address
+Who is receiving the traffic
+
+Port number
+Which service (e.g., 80 = HTTP, 443 = HTTPS)
+
+Protocol
+TCP, UDP, ICMP, etc.
+
+Direction
+
+Inbound (ingress)
+
+Outbound (egress)
+
+Action
+
+Allow / Accept
+
+Deny / Block
+
+Reject (block + notify)
+
+Logging (optional)
+Record the traffic for monitoring
+
+Basic Rules of Firewall Configuration (Very Important)
+1. Default Deny Rule
+
+Block everything by default, then allow only what is needed.
+
+This is the golden rule of firewall security 🔐.
+
+2. Rule Order Matters
+
+Firewall checks rules top to bottom
+
+The first matching rule is applied
+
+Bad ordering = security holes
+
+👉 Specific rules should come before general rules.
+
+3. Least Privilege Principle
+
+Allow minimum access required:
+
+Only required IPs
+
+Only required ports
+
+Only required protocols
+
+4. Explicit Allow Rules
+
+Every allowed service must have a clear rule:
+
+Web → port 80/443
+
+SSH → port 22 (restricted IPs only)
+
+Never leave services “open to all” unless necessary.
+
+5. Inbound and Outbound Control
+
+Inbound rules protect your network from outsiders
+
+Outbound rules prevent data leaks and malware callbacks
+
+Many people forget outbound rules — big mistake.
+
+6. Avoid “Any–Any–Allow”
+
+Rules like:
+
+Source: ANY | Destination: ANY | Port: ANY | Action: ALLOW
+
+❌ Very dangerous
+✅ Use only temporarily for testing, then remove
+
+7. Use Stateful Rules When Possible
+
+Allow return traffic automatically for legitimate sessions
+
+Prevents spoofed responses
+
+8. Log and Monitor Rules
+
+Log denied traffic
+
+Review logs regularly
+
+Helps detect attacks and misconfigurations
+
+9. Regular Rule Review & Cleanup
+
+Remove unused rules
+
+Disable temporary rules
+
+Update rules when services change
+
+Old rules = hidden risks 🧨
+
+10. Separate Public and Private Services
+
+Public-facing servers → DMZ
+
+Internal systems → restricted access
+
+Never expose internal systems directly.
